@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Botao } from './components/Botao';
 import { sections } from '../src/utils/SignupInputs';
 
-export default function Login() {
+export default function Signup() {
   const [sectionNumber, setSectionNumber] = useState(0)
 
   const handleNextSection = () => {
