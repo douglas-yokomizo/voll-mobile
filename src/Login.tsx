@@ -15,7 +15,7 @@ export default function Login({navigation}) {
       <TextInput placeholder='Insira seu endereço de email' label='Email'/>
       <TextInput placeholder='Insirua sua senha' label='Senha'/>
       </Box>
-        <Button w={'100%'} mt={10} borderRadius={'lg'} bgColor={'blue.800'}>Entrar</Button>
+        <Button onPress={() => navigation.navigate('Tabs')} w={'100%'} mt={10} borderRadius={'lg'} bgColor={'blue.800'}>Entrar</Button>
         <Link href='https://www.alura.com.br' mt={2} justifyContent={'center'}>Esqueceu a senha?</Link>
         <Box mt={8} justifyContent={'center'} w={'100%'} flexDirection={'row'}>
           <Text>

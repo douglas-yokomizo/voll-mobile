@@ -1,9 +1,9 @@
 import { VStack, Text } from "native-base"
 
-export default function Main() {
+export default function Appointments() {
   return (
     <VStack>
-        <Text>Main</Text>
+        <Text>Appointments</Text>
     </VStack>
   )
 }
