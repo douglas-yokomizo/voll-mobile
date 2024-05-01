@@ -5,7 +5,7 @@ interface CardAppointmentsProps {
   name: string;
   specialty: string;
   picture: string;
-  date: string;
+  date?: string;
   hasAttended?: boolean;
 }
 

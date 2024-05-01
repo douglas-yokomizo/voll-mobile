@@ -1,15 +1,21 @@
-import { Button, IButtonProps } from 'native-base';
+import { Button, IButtonProps, Text } from "native-base";
 
 interface BotaoProps extends IButtonProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const Botao = ( { children, ...rest }:BotaoProps ) => {
-    return(
-    <Button w={'100%'} mt={4} borderRadius={'lg'} bgColor={'blue.800'} {...rest}>
-        { children }
+const Botao = ({ children, ...rest }: BotaoProps) => {
+  return (
+    <Button
+      w={"100%"}
+      mt={4}
+      borderRadius={"lg"}
+      bgColor={"blue.800"}
+      {...rest}
+    >
+      {children}
     </Button>
-    )
-}
+  );
+};
 
-export {Botao}
+export { Botao };

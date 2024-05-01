@@ -2,7 +2,7 @@ import React from "react";
 import { FormControl, Input } from "native-base";
 
 interface TextInputProps extends React.ComponentProps<typeof FormControl> {
-  label: string;
+  label?: string;
   placeholder: string;
 }
 
