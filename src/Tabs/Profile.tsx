@@ -1,4 +1,4 @@
-import { VStack, Text, ScrollView, Avatar, Image, Divider } from "native-base";
+import { VStack, Text, ScrollView, Avatar, Divider } from "native-base";
 import { Title } from "../components/Title";
 
 export default function Profile() {
@@ -29,8 +29,8 @@ export default function Profile() {
         <Title fontSize={"xl"} mt={10} color={"blue.500"} mb={0}>
           Histórico médico
         </Title>
-        <Text>Bronquite</Text>
-        <Text>Sinusite</Text>
+        <Text fontWeight={"bold"}>Bronquite</Text>
+        <Text fontWeight={"bold"}>Sinusite</Text>
       </VStack>
     </ScrollView>
   );

@@ -4,7 +4,6 @@ import {
   Image,
   Center,
   Box,
-  View,
   ScrollView,
   Divider,
 } from "native-base";
@@ -25,18 +24,19 @@ export default function Main() {
           alignItems={"center"}
           w={"90%"}
         >
-          <View
+          <Box
             w={"100%"}
             borderColor={"#e4e8f0"}
             borderWidth={"2"}
             px={4}
             pb={4}
             borderRadius={"lg"}
+            shadow={1}
           >
             <TextInput placeholder="Digite a especialidade" label="" mt={0} />
             <TextInput placeholder="Digite sua localização" label="" mt={0} />
             <Botao p={3}>Buscar</Botao>
-          </View>
+          </Box>
           <Title color={"blue.800"}>Depoimentos</Title>
           <Box mt={6}>
             <Text>
