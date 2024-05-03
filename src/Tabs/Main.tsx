@@ -31,7 +31,6 @@ export default function Main() {
             px={4}
             pb={4}
             borderRadius={"lg"}
-            shadow={1}
           >
             <TextInput placeholder="Digite a especialidade" label="" mt={0} />
             <TextInput placeholder="Digite sua localização" label="" mt={0} />

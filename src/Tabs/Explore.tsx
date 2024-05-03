@@ -13,7 +13,6 @@ export default function Explore() {
         borderWidth={1}
         p={4}
         borderColor={"gray.200"}
-        shadow={1}
         borderRadius={"lg"}
       >
         <TextInput placeholder="Digite a especialidade" mt={0} />

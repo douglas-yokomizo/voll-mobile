@@ -1,23 +1,52 @@
-import { VStack, Image, Text, Box, Button, Link } from "native-base";
+import { VStack, Image, Text, Box, Button, Link, useToast } from "native-base";
 import Logo from "./assets/Logo.png";
 import { TouchableOpacity } from "react-native";
 import { Title } from "./components/Title";
 import { TextInput } from "./components/TextInput";
-import { useState } from "react";
-import { loginUser } from "./services/authService";
+import { useState, useEffect } from "react";
+import { fazerLogin } from "./services/authService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { jwtDecode } from "jwt-decode";
 
 export default function Login({ navigation }: any) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [carregando, setCarregando] = useState(true);
+  const toast = useToast();
 
-  const login = async () => {
-    const res = await loginUser(email, senha);
-    if (res) {
+  useEffect(() => {
+    async function verificarLogin() {
+      const token = await AsyncStorage.getItem("token");
+      if (token) {
+        navigation.replace("Tabs");
+      }
+      setCarregando(false);
+    }
+    verificarLogin();
+  }, []);
+
+  async function login() {
+    const resultado = await fazerLogin(email, senha);
+    if (resultado) {
+      const { token } = resultado;
+      AsyncStorage.setItem("token", token);
+
+      const tokenDecodificado = jwtDecode(token) as any;
+      const pacienteId = tokenDecodificado.id;
+      AsyncStorage.setItem("pacientId", pacienteId);
       navigation.replace("Tabs");
     } else {
-      alert("Email ou senha inválidos");
+      toast.show({
+        title: "Erro no login",
+        description: "O email ou senha não conferem",
+        backgroundColor: "red.500",
+      });
     }
-  };
+  }
+
+  if (carregando) {
+    return null;
+  }
 
   return (
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>

@@ -1,14 +1,16 @@
 import api from "./api";
 
-export const loginUser = async (email: string, senha: string) => {
-  if (!email || !senha) throw new Error("Email e senha são obrigatórios");
-
+export async function fazerLogin(email: string, senha: string) {
+  if (!email || !senha) return null;
   try {
-    const res = await api.post("/auth/login", { email, senha });
-    console.log(res.data);
-    return res.data;
+    const resultado = await api.post("/auth/login", {
+      email,
+      senha,
+    });
+    console.log(resultado.data);
+    return resultado.data;
   } catch (error) {
-    console.log(`Erro ao fazer login: ${error}`);
+    console.log(error);
     return null;
   }
-};
+}

@@ -11,7 +11,7 @@ export default function Appointments() {
           Minhas consultas
         </Title>
         <Botao w={"90%"} p={4}>
-          <Text fontWeight={"bold"} fontFamily={"xl"} color={"white"}>
+          <Text fontWeight={"bold"} color={"white"}>
             Agendar outra consulta
           </Text>
         </Botao>
